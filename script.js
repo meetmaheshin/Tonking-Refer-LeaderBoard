@@ -1,4 +1,4 @@
-fetch('https://your-api-endpoint.com/users')
+fetch('http://216.48.184.198:8085/tonk/user/referral-count-data?fromDate=1710181800000&toDate=1710268199000')
   .then(response => response.json())
   .then(data => {
     const leaderboardBody = document.getElementById('leaderboard-body');
