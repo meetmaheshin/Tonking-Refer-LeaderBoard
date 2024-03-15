@@ -15,4 +15,8 @@ fetch('http://216.48.184.198:8085/tonk/user/referral-count-data?fromDate=1710181
       leaderboardBody.appendChild(row);
     });
   })
-  .catch(error => console.error('Error fetching data:', error));
+    console.log('Data:', data);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
