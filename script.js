@@ -1,5 +1,10 @@
 fetch('http://216.48.184.198:8085/tonk/user/referral-count-data?fromDate=1710181800000&toDate=1710268199000')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
   .then(data => {
     const sortedData = data.sort((a, b) => b.referralCount - a.referralCount);
     const leaderboardBody = document.getElementById('leaderboard-body');
@@ -15,8 +20,4 @@ fetch('http://216.48.184.198:8085/tonk/user/referral-count-data?fromDate=1710181
       leaderboardBody.appendChild(row);
     });
   })
-    console.log('Data:', data);
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
+  .catch(error => console.error('Error fetching data:', error));
