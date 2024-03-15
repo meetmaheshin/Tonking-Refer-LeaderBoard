@@ -8,7 +8,7 @@ fetch('http://216.48.184.198:8085/tonk/user/referral-count-data?fromDate=1710181
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${index + 1}</td>
-        <td>${user.name}</td>
+        <td>${tgUserId}</td>
         <td>${user.score}</td>
       `;
       leaderboardBody.appendChild(row);
